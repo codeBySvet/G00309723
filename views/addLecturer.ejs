@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='/styles/design.css'>
+</head>
+
+<body>
+
+    <h2>Add Lecturer</h2>
+
+
+    <% if (errors !=undefined) {%>
+        <ul>
+            <% errors.forEach((error)=>{%>
+
+                <li style="color:Red">
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+
+
+            <% if (errorsTwo !=undefined) {%>
+                <ul>
+                    <li style="color:Red">
+                        <%= errorsTwo %>
+                    </li>
+
+                </ul>
+                <% } %>
+
+
+
+
+
+                    <form action="/addLecturer" method='POST'>
+                        <label>Lecturer ID:</label><br>
+                        <input type="text" name="_id" value=""><br>
+                        <label>Name:</label><br>
+                        <input type="text" name="name" value=""><br>
+                        <label>Dept:</label><br>
+                        <input type="text" name="dept" value=""><br>
+                        <input type="submit" value="Add">
+
+                    </form><br>
+                    <a href="/">Home </a>
+
+</body>
+
+</html>

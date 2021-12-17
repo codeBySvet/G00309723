@@ -1,0 +1,1 @@
+select o.name "name",c.name "name", c.population "population" from city c right join country o on c.country=o.cid where c.population > 4000000 order by o.name;

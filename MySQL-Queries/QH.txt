@@ -1,0 +1,1 @@
+select o.name from organisation o left join country_organisation co on o.oid=co.organisation left join country c on co.country=c.cid left join city ci on c.cid=ci.country where ci.name="Toulouse";

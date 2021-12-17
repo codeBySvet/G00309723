@@ -1,0 +1,1 @@
+select count(name) as"1940s" from organisation where year(founded) between 1940 and 1949;

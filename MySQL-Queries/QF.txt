@@ -1,0 +1,1 @@
+select name, case when population<50000 then "Very Small" when population between 50000 and 100000 then "Small" when population between 500000 and 1000000 then "Medium" when population between 1000000 and 5000000 then "Large"  else "Gigantic" end as"Size" from city order by name;

@@ -1,0 +1,51 @@
+<head>
+    <link rel='stylesheet' href='/styles/design.css'>
+</head>
+
+<h1>Students</h1>
+
+<form action="/addStudent">
+    <input type="submit" value="Add Student" />
+</form>
+
+<form>
+    <input type="button" onclick="window.location.href='/listStudents';" value="Sort by ID" />
+    <input type="button" onclick="window.location.href='/sortByName';" value="Sort by Name" />
+    <input type="button" onclick="window.location.href='/sortByGPA';" value="Sort by GPA" />
+
+</form>
+
+<form action="/sortByName">
+
+</form>
+
+
+
+<table >
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>GPA</th>
+        <th>Action</th>
+    </tr>
+    <% studentsMethod.forEach((student)=>
+        { %>
+        <tr>
+            <td>
+                <%= student.sid %>
+            </td>
+            <td>
+                <%= student.name %>
+            </td>
+            <td>
+                <%= student.gpa %>
+            </td>
+
+            <td>
+            <a href=<%=" /students/delete/"+ student.sid %> >Delete </a>
+            </td>
+
+        </tr>
+        <% }) %>
+</table><br>
+<a href="/">Home </a>

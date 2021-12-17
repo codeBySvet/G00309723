@@ -1,0 +1,1 @@
+select c.name, count(o.name) as "Number of Organisations" from country c left join country_organisation co on c.cid=co.country left join organisation o on o.oid=co.organisation group by c.name;

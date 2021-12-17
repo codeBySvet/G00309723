@@ -1,0 +1,44 @@
+<head>
+    <link rel='stylesheet' href='/styles/design.css'>
+</head>
+<body>
+<h1>Lecturers</h1>
+
+
+
+<form action="\addLecturer">
+    <input type="submit" value="Add Lecturer" />
+</form>
+
+<form>
+    <input type="button" onclick="window.location.href='/listLecturers';" value="Sort by Id" />
+    <input type="button" onclick="window.location.href='/listLecturersAlpha';" value="Sort by Name" />
+    <input type="button" onclick="window.location.href='/listLecturersDept';" value="Sort by Dept" />
+
+</form>
+
+<table>
+    <tr>
+        <th>Lecturer ID</th>
+        <th>Name</th>
+        <th>Dept</th>
+    </tr>
+    <% LecturersMethod.forEach((lecturer)=>
+        { %>
+        <tr>
+            <td>
+                <%= lecturer._id %>
+            </td>
+            <td>
+                <%= lecturer.name %>
+            </td>
+            <td>
+                <%= lecturer.dept %>
+            </td>
+
+        </tr>
+        <% }) %>
+</table><br>
+<a href="/">Home </a>
+
+</body>

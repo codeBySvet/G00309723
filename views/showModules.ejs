@@ -1,0 +1,45 @@
+<head>
+    <link rel='stylesheet' href='/styles/design.css'>
+</head>
+<h1>Modules</h1>
+
+<form>
+    <input type="button" onclick="window.location.href='/listModules';" value="Sort by ID" />
+    <input type="button" onclick="window.location.href='/listModulesAlpha';" value="Sort by Name" />
+    <input type="button" onclick="window.location.href='/listModulesCredits';" value="Sort by Credits" />
+
+</form>
+
+<table style="margin-top: 40px">
+    <tr>
+        <th>Module ID</th>
+        <th>Name</th>
+        <th>Credits</th>
+        <th>Update</th>
+        <th>Students</th>
+    </tr>
+    <% modulesMethod.forEach((module)=>
+        { %>
+        <tr>
+            <td>
+                <%= module.mid %>
+            </td>
+            <td>
+                <%= module.name %>
+            </td>
+            <td>
+                <%= module.credits %>
+            </td>
+            <td>
+                <a href=<%=" /module/edit/"+ module.mid %> >Update </a>
+            </td>
+
+            <td>
+                <a href=<%=" /module/students/"+ module.mid %> >List </a>
+            </td>
+
+        </tr>
+        <% }) %>
+
+</table><br>
+<a href="/">Home </a>
