@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-
 <head>
     <link rel='stylesheet' href='/styles/design.css'>
 </head>
 <h1>Edit Module</h1>
-<html>
 
 <body>
-
-    <h2>Edit Module</h2>
-
 
     <% if (errors !=undefined) {%>
         <ul>
@@ -21,9 +16,6 @@
                 <% }) %>
         </ul>
         <% } %>
-
-
-
             <form action="/module/edit/:mid" method='POST'>
                 <label>Module ID:</label><br>
                 <input type="text" name="mid" value="<%= id %>" readonly><br>
@@ -31,13 +23,8 @@
                 <input type="text" name="name" value="<%= name %>"><br>
                 <label>Credits:</label><br>
                 <input type="number" name="credits" value="<%= credits %>"><br>
-
                 <input type="submit" value="Edit">
 
             </form><br>
-
             <a href="/">Home </a>
-
 </body>
-
-</html>

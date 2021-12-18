@@ -46,7 +46,6 @@ var getModulesCredits = function () {
     return new Promise((resolve, reject) => {
         pool.query('select * from module order by credits;')
             .then((result) => {
-                console.log(result)
                 resolve(result)
             })
             .catch((error) => {
@@ -76,27 +75,19 @@ var getModule = function (mid) {
 //Edit/update a modules details
 var editModule = function (mid, name, credits) {
     return new Promise((resolve, reject) => {
-
-        console.log("name: " + name + " MID: " + mid + " creidts" + credits)
-
         var myQuery = {
             sql: 'update module set name= ?, credits = ? where mid=?',
             values: [name, credits, mid]
         }
-        console.log("mysqlDAO - edit module - .then() ")
-
         pool.query(myQuery)
-
             .then((result) => {
                 resolve(result)
             })
             .catch((error) => {
-                // console.log('WERE IN THE ERROR PART OF SQLDAO')
                 reject(error)
             })
     })
 }
-
 
 //Add a student to the database
 var addStudent = function (sid, name, gpa) {
@@ -117,8 +108,6 @@ var addStudent = function (sid, name, gpa) {
             })
     })
 }
-
-
 
 //Get all students
 var getStudents = function () {
@@ -146,7 +135,6 @@ var getStudentsAlpha = function () {
     })
 }
 
-
 //Get all students in gpa order
 var getStudentsGPA = function () {
     return new Promise((resolve, reject) => {
@@ -160,7 +148,6 @@ var getStudentsGPA = function () {
     })
 }
 
-
 //Get all students enrolled in a certain module
 var getEnrolled = function (mid) {
     return new Promise((resolve, reject) => {
@@ -171,7 +158,6 @@ var getEnrolled = function (mid) {
         pool.query(myQuery)
             .then((result) => {
                 resolve(result)
-                //console.log(result)
             })
             .catch((error) => {
                 reject(error)
@@ -213,7 +199,6 @@ var getEnrolledGPA = function (mid) {
     })
 }
 
-
 //Get a single student
 var getStudent = function (sid) {
     return new Promise((resolve, reject) => {
@@ -250,6 +235,7 @@ var deleteStudent = function (sid) {
 }
 
 
+//Marking for export
 module.exports = { getModule, getModules, getModulesAlpha, getModulesCredits, editModule, 
     
     getEnrolled, getEnrolledAlpha,getEnrolledGPA, 

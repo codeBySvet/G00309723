@@ -7,10 +7,9 @@
     <input type="button" onclick="window.location.href='/listModules';" value="Sort by ID" />
     <input type="button" onclick="window.location.href='/listModulesAlpha';" value="Sort by Name" />
     <input type="button" onclick="window.location.href='/listModulesCredits';" value="Sort by Credits" />
-
 </form>
 
-<table style="margin-top: 40px">
+<table>
     <tr>
         <th>Module ID</th>
         <th>Name</th>
@@ -18,6 +17,7 @@
         <th>Update</th>
         <th>Students</th>
     </tr>
+
     <% modulesMethod.forEach((module)=>
         { %>
         <tr>
@@ -31,11 +31,10 @@
                 <%= module.credits %>
             </td>
             <td>
-                <a href=<%=" /module/edit/"+ module.mid %> >Update </a>
+                <a href=<%=" /module/edit/" + module.mid %> >Update </a>
             </td>
-
             <td>
-                <a href=<%=" /module/students/"+ module.mid %> >List </a>
+                <a href=<%=" /module/students/" + module.mid %> >List </a>
             </td>
 
         </tr>

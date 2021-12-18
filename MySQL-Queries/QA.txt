@@ -1,1 +1,0 @@
-select name, population from country order by population desc;

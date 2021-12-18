@@ -1,9 +1,9 @@
 table, tr, th, td{
     border: 1px solid black;
-    
-}
-tr:hover {background-color: yellow;}
 
+}
+
+tr:hover {background-color: yellow;}
 
 th {
     background-color: #04AA6D;
@@ -11,14 +11,16 @@ th {
   }
   
 body{
-    max-width: 500px;
+    max-width: 330px;
     margin: auto;
     color: rgb(0, 0, 0);
-
-    border-radius: 15px 50px;
-    padding: 20px;
-
 }
 
+div{
+    max-width: 330px;
+    padding-top: 50%;
+    color: rgb(0, 0, 0);
+    margin: auto;
+    
 
-
+}

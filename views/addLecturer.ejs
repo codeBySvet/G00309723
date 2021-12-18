@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html>
-
 <head>
     <link rel='stylesheet' href='/styles/design.css'>
 </head>
 
 <body>
-
     <h2>Add Lecturer</h2>
-
 
     <% if (errors !=undefined) {%>
         <ul>
             <% errors.forEach((error)=>{%>
-
                 <li style="color:Red">
                     <%= error.msg %>
                 </li>
@@ -21,19 +16,13 @@
         </ul>
         <% } %>
 
-
             <% if (errorsTwo !=undefined) {%>
                 <ul>
                     <li style="color:Red">
                         <%= errorsTwo %>
                     </li>
-
                 </ul>
                 <% } %>
-
-
-
-
 
                     <form action="/addLecturer" method='POST'>
                         <label>Lecturer ID:</label><br>
@@ -46,7 +35,4 @@
 
                     </form><br>
                     <a href="/">Home </a>
-
 </body>
-
-</html>

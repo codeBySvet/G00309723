@@ -10,16 +10,9 @@
 
 <form>
     <input type="button" onclick="window.location.href='/listStudents';" value="Sort by ID" />
-    <input type="button" onclick="window.location.href='/sortByName';" value="Sort by Name" />
-    <input type="button" onclick="window.location.href='/sortByGPA';" value="Sort by GPA" />
-
+    <input type="button" onclick="window.location.href='/listStudentsAlpha';" value="Sort by Name" />
+    <input type="button" onclick="window.location.href='/listStudentsGpa';" value="Sort by GPA" />
 </form>
-
-<form action="/sortByName">
-
-</form>
-
-
 
 <table >
     <tr>
@@ -40,12 +33,11 @@
             <td>
                 <%= student.gpa %>
             </td>
-
             <td>
             <a href=<%=" /students/delete/"+ student.sid %> >Delete </a>
             </td>
-
         </tr>
         <% }) %>
 </table><br>
+
 <a href="/">Home </a>

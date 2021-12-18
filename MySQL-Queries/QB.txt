@@ -1,1 +1,0 @@
-select avg(population) "Average UK City" from city where country="uk";
